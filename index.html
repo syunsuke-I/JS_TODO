@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="ja" data-theme="light">
+
+<head>
+	<meta charset="UTF-8">
+	<link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.3/dist/full.css" rel="stylesheet" type="text/css" />
+	<script src="https://cdn.tailwindcss.com"></script>
+	<title>TODO</title>
+  <style>
+  /* エラー時のスタイル */
+  .input-error {
+    border-color: red;
+  }
+
+  /* 揺れのアニメーション */
+  @keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+  }
+
+  .shake {
+    animation: shake 0.3s;
+  }
+  </style>
+</head>
+
+<body>
+  <div class="min-h-screen bg-gray-100 py-6 flex flex-col justify-center sm:py-12">
+    <div class="relative py-3 sm:max-w-xl sm:mx-auto">
+      <div class="relative px-4 py-10 bg-white mx-8 md:mx-0 shadow rounded-3xl sm:p-10">
+        
+        <!-- 入力欄と保存ボタン -->
+        <div class="flex justify-between items-center mb-4">
+          <input type="text" id="todoInput" class="flex-grow p-2 border rounded-md mr-2" placeholder="What to do next?">
+          <button id="createTodoButton" class="bg-blue-500 text-white px-4 py-2 rounded-md">作成</button> 
+        </div>
+  
+        <!-- TODO一覧 -->
+        <ul id="todoList" class="space-y-4">
+          <!-- ここに動的にTODO項目が追加される -->
+        </ul>
+  
+        <!-- タスクの数を表示 -->
+        <div class="mt-4">
+          <span id="totalTaskCount">全てのタスク：0</span>
+          <span id="completedTaskCount" class="ml-4">完了済み：0</span>
+          <span id="incompleteTaskCount" class="ml-4">未完了：0</span>
+        </div> 
+    </div>
+  </div>
+  
+  <script type="module" src="js/index.js"></script>
+</body>
+
+</html>
